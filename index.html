@@ -5,27 +5,7 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <script>
-    window.onload = function() {
-      fetch('https://shorturl.ac/7dkrd', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          // Add any other headers if required
-        },
-        body: JSON.stringify({
-          // Add any data you want to send to the webhook
-        })
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to call webhook');
-        }
-        // Webhook call successful
-      })
-      .catch(error => {
-        console.error('Error calling webhook:', error);
-      });
-    };
+    
   </script>
 </head>
 <body>
