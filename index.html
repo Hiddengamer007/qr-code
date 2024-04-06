@@ -7,9 +7,28 @@
   <meta http-equiv="Expires" content="0" />
   <meta http-equiv="refresh" content="1; url=https://www.arbeitsagentur.de/" />
   <script>
-    var timestamp = new Date().toLocaleString();
-    var message = encodeURIComponent("The QR Code has been scanned. Timestamp: " + timestamp);
-    fetch('https://api.callmebot.com/whatsapp.php?phone=4915901726956&text=' + message + '&apikey=5946379');
+    function sendWhatsAppMessage(message) {
+      fetch('https://api.callmebot.com/whatsapp.php?phone=4915901726956&text=' + message + '&apikey=5946379');
+    }
+
+    function getDeviceType() {
+      if (/Android/i.test(navigator.userAgent)) {
+        return "Android phone";
+      } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        return "iPhone";
+      } else {
+        return "PC";
+      }
+    }
+
+    function main() {
+      var deviceType = getDeviceType();
+      var timestamp = new Date().toLocaleString();
+      var message = encodeURIComponent("The QR Code has been scanned. Timestamp: " + timestamp + ". Device Type: " + deviceType);
+      sendWhatsAppMessage(message);
+    }
+
+    window.onload = main;
   </script>
 </head>
 <body>
