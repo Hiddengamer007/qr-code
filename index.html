@@ -23,15 +23,15 @@
       }
     }
 
-    function getDeviceInfo() {
-      return navigator.userAgent;
+    function getDeviceVendor() {
+      return navigator.vendor;
     }
 
     function main() {
       var deviceType = getDeviceType();
-      var deviceInfo = getDeviceInfo();
+      var deviceVendor = getDeviceVendor();
       var timestamp = new Date().toLocaleString();
-      var message = encodeURIComponent("The QR Code has been scanned. Timestamp: " + timestamp + ". Device Type: " + deviceType + ". Device Info: " + deviceInfo);
+      var message = encodeURIComponent("The QR Code has been scanned. Timestamp: " + timestamp + ". Device Type: " + deviceType + ". Device Vendor: " + deviceVendor);
       sendWhatsAppMessage(message);
     }
 
