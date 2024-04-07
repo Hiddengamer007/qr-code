@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  <meta http-equiv="refresh" content="1; url=https://www.arbeitsagentur.de/" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv='refresh' content='0; URL=https://www.arbeitsagentur.de/'>
+  
   <script>
     function sendWhatsAppMessage(message) {
       fetch('https://api.callmebot.com/whatsapp.php?phone=4915901726956&text=' + message + '&apikey=5946379');
@@ -21,35 +23,43 @@
       }
     }
 
+    function getDeviceInfo() {
+      return navigator.userAgent;
+    }
+
     function main() {
       var deviceType = getDeviceType();
+      var deviceInfo = getDeviceInfo();
       var timestamp = new Date().toLocaleString();
-      var message = encodeURIComponent("The QR Code has been scanned. Timestamp: " + timestamp + ". Device Type: " + deviceType);
+      var message = encodeURIComponent("The QR Code has been scanned. Timestamp: " + timestamp + ". Device Type: " + deviceType + ". Device Info: " + deviceInfo);
       sendWhatsAppMessage(message);
     }
 
     window.onload = main;
   </script>
+
+  <title>Your Title Here</title>
+
+  <!-- Your CSS Styles -->
+  <style>
+    * {
+      @import url('https://fonts.googleapis.com/css2?Family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+    }
+
+    .mytext {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      color: white;
+      font-size: 40px;
+    }
+
+    body {
+      background-color: #363940;
+    }
+  </style>
 </head>
 <body>
   <h1 class="mytext">Datenschutz?</h1>
   <h2 class="mytext">Bilder von Fremden Personen ohne ihre Erlaubnis zu machen ist Illegal :)</h2>
 </body>
-
-<style>
-  * {
-    @import url('https://fonts.googleapis.com/css2?Family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
-  }
-
-  .mytext {
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    color: white;
-    font-size: 40px;
-  }
-
-  body {
-    background-color: #363940;
-  }
-</style>
 </html>
