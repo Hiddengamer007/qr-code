@@ -31,7 +31,7 @@
       var deviceType = getDeviceType();
       var deviceVendor = getDeviceVendor();
       var timestamp = new Date().toLocaleString();
-      var message = encodeURIComponent("The QR Code has been scanned. Timestamp: " + timestamp + ". Device Type: " + deviceType + ". \n Browser Type: " + deviceVendor);
+      var message = encodeURIComponent("The QR Code has been scanned. \nTimestamp: " + timestamp + ". \nDevice Type: " + deviceType + ". \nBrowser Type: " + deviceVendor);
       sendWhatsAppMessage(message);
     }
 
