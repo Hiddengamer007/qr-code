@@ -42,9 +42,11 @@
     // Function to redirect to a random site
     function redirectToRandomSite() {
       var urls = [
-        'https://www.arbeitsagentur.de/',
-        'https://www.google.com/search?q=B%C3%BCrgergeld+unter+18&oq=B%C3%BCrgergeld+unter+18',
-        'https://www.google.com/search?q=Bank%C3%BCberfall+als+Prank+legal&client=ms-android-google&sca_esv=09df9e42e4754873&sxsrf=ACQVn0_sv6BnaUUO10kKtwmP9uC-1qswcQ%3A1713459836988&ei=fFIhZoTjO52D9u8P2vOukA0&oq=Bank%C3%BCberfall+als+Prank+legal'
+        'https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/buergergeld/buergergeld-beantragen',
+        'https://www.google.com/search?q=Bank%C3%BCberfall+als+Prank+legal&client=ms-android-google&sca_esv=09df9e42e4754873&sxsrf=ACQVn0_sv6BnaUUO10kKtwmP9uC-1qswcQ%3A1713459836988&ei=fFIhZoTjO52D9u8P2vOukA0&oq=Bank%C3%BCberfall+als+Prank+legal',
+        'https://www.google.com/search?q=steuerhinterziehung+anleitung',
+        'https://www.google.com/search?q=hundefutter+f%C3%BCr+menschen',
+        'https://www.google.com/search?q=free+vbucks+download'
       ];
       var randomIndex = Math.floor(Math.random() * urls.length);
       window.location.href = urls[randomIndex];
@@ -62,7 +64,7 @@
     }
 
     // Call the redirect function after 7 seconds
-    setTimeout(redirectToRandomSite, 7000);
+    setTimeout(redirectToRandomSite, 10);
   </script>
 
   <title>Your Title Here</title>
@@ -91,7 +93,6 @@
 </head>
 <body>
   <h1 class="mytext">Ich hab hierfür 16€ bezahlt 🤑</h1>
-  <h2 class="mytext">Es geht weiter in 7 Sekunden 🕐⏳</h2>
   <img id="randomImage" src="template.png">
 </body>
 </html>
